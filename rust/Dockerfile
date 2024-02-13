@@ -11,10 +11,11 @@ RUN apt-get update \
     gcc \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Rust
+# Install specific version of Rust
+ENV RUST_VERSION=1.76.0
 RUN curl https://sh.rustup.rs -sSf > /tmp/rustup-init.sh \
     && chmod +x /tmp/rustup-init.sh \
-    && sh /tmp/rustup-init.sh -y \
+    && sh /tmp/rustup-init.sh -y --default-toolchain $RUST_VERSION \
     && rm -rf /tmp/rustup-init.sh
 
 ENV PATH "$PATH:/root/.cargo/bin"
