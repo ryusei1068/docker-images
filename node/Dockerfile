@@ -8,8 +8,5 @@ RUN apt-get update \
     apt-utils \
     curl
 
-RUN curl -sL https://deb.nodesource.com/setup_20.x -o /tmp/nodesource_setup.sh \
-    && chmod +x /tmp/nodesource_setup.sh \
-    && bash /tmp/nodesource_setup.sh -y \
-    && rm -rf /tmp/nodesource_setup.sh \
-    && apt install nodejs
+RUN curl -fsSL https://deb.nodesource.com/setup_21.x | bash - &&\
+    apt-get install -y nodejs
