@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 USER root
-ENV USER root
+ENV USER=root
 
 # Install package dependencies.
 RUN apt-get update \
@@ -12,10 +12,10 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Install specific version of Rust
-ENV RUST_VERSION=1.80.0
+ENV RUST_VERSION=1.81.0
 RUN curl https://sh.rustup.rs -sSf > /tmp/rustup-init.sh \
     && chmod +x /tmp/rustup-init.sh \
     && sh /tmp/rustup-init.sh -y --default-toolchain $RUST_VERSION \
     && rm -rf /tmp/rustup-init.sh
 
-ENV PATH "$PATH:/root/.cargo/bin"
+ENV PATH="$PATH:/root/.cargo/bin"
