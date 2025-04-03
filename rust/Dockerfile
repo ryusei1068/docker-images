@@ -12,7 +12,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Install specific version of Rust
-ENV RUST_VERSION=1.85.0
+ENV RUST_VERSION=1.86.0
 RUN curl https://sh.rustup.rs -sSf > /tmp/rustup-init.sh \
     && chmod +x /tmp/rustup-init.sh \
     && sh /tmp/rustup-init.sh -y --default-toolchain $RUST_VERSION \
