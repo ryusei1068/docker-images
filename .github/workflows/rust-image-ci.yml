@@ -19,10 +19,6 @@ jobs:
         name: Build image
         run: docker build -t rust-build:test ./rust
       - 
-        name: Check cargo path (in container)
-        run: |
-          docker run --rm rust-build:test which cargo
-      -
         name: Run test inside container
         run: |
           docker run --rm -v ${{ github.workspace }}:/work -w /work rust-build:test \
