@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
     tags: [ "*" ]
   pull_request:
-    paths: [ "rust/** "]
+    paths: [ "rust/**"]
 
 jobs:
   build-image-test:
