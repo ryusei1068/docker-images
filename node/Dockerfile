@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 USER root
 ENV USER root
@@ -8,5 +8,5 @@ RUN apt-get update \
     apt-utils \
     curl
 
-RUN curl -fsSL https://deb.nodesource.com/setup_21.x | bash - &&\
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - &&\
     apt-get install -y nodejs
