@@ -25,7 +25,7 @@ jobs:
             bash -c "cargo new test_project && cd test_project && cargo run"
 
   build-image-publish:
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/') && !startsWith(github.ref_name, 'v')
     runs-on: ubuntu-latest
     steps:
       -
