@@ -8,5 +8,5 @@ RUN apt-get update \
     apt-utils \
     curl
 
-RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - &&\
+RUN curl -fsSL https://deb.nodesource.com/setup_24.x | bash - &&\
     apt-get install -y nodejs
